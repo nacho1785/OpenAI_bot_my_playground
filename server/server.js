@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv'
 import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
 
-dotenv.config({path: '/.env'})
+dotenv.config({path: '/server/.env'})
 const configuration = new Configuration({
   organization: "org-NGUpAObYj4LEw5wCyw46ZnGY",
   apiKey: process.env.OPENAI_API_KEY,
