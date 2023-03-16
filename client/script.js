@@ -67,6 +67,7 @@ const handleSubmit = async (e) => {
 
     const data = new FormData(form)
 
+    const selectedModel = data.get('model');
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
 
@@ -92,7 +93,8 @@ const handleSubmit = async (e) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            prompt: data.get('prompt')
+            prompt: data.get('prompt'),
+            model: selectedModel,
         })
     })
 

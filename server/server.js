@@ -23,12 +23,26 @@ app.get('/', async (req, res) => {
 
 app.post('/', async (req, res) => {
   try {
+    const validModels = [
+      'text-davinci-002',
+      'text-curie-002',
+      'text-babbage-002',
+      'text-ada-002',
+      'text-davinci-003',
+      'text-curie-003',
+      'text-babbage-001',
+      'text-ada-001',
+    ];
     const prompt = req.body.prompt;
+    const model = req.body.model;
 
+    if (!validModels.includes(model)) {
+      return res.status(400).send({ error: 'Invalid model name.' });
+    }
     const response = await openai.createCompletion({
-      model: 'text-davinci-003',
+      model: model,
       prompt: `${prompt}`,
-      temperature: 0,
+      temperature: 0.2,
       max_tokens: 3000,
       top_p: 1,
       frequency_penalty: 0.5,
@@ -40,7 +54,7 @@ app.post('/', async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).send(error || 'Something went wrong');
+    res.status(500).send(error.message || 'Something went wrong');
   }
 });
 
