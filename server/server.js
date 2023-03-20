@@ -10,9 +10,24 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://open-ai-bot-kappa.vercel.app',
+];
+
 
 const app = express();
-app.use(cors({ origin: 'https://open-ai-bot-kappa.vercel.app' }));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  }),
+);
 app.use(express.json());
 
 app.get('/', async (req, res) => {
