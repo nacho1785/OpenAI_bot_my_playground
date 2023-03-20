@@ -25,6 +25,12 @@ const openai = new OpenAIApi(configuration);
 
 
 const app = express();
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://open-ai-bot-kappa.vercel.app',
+]; 
+
 app.use(
   cors({
     origin: function (origin, callback) {
