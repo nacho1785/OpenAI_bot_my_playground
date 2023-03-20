@@ -11,7 +11,14 @@
     <div id="app">
       <div id="chat_container"></div>
 
-      <form>
+      <button id="toggleFormButton">Toggle Form</button>
+      <script>
+        document.getElementById('toggleFormButton').addEventListener('click', () => {
+          const form = document.getElementById('myForm');
+          form.classList.toggle('collapsed');
+        });
+      </script>
+      <form id="myForm" class="collapsed"></form>
         <label for="model">Model:</label>
         <select name="model" id="model">
           <option value="text-davinci-003">text-davinci-003</option>
