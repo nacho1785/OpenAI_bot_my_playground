@@ -12,7 +12,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: 'https://open-ai-bot-kappa.vercel.app/' }));
 app.use(express.json());
 
 app.get('/', async (req, res) => {
