@@ -1,7 +1,6 @@
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
 
-
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
@@ -117,7 +116,7 @@ const handleSubmit = async (e) => {
 
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
+    if (e.key === 'Enter') {
         handleSubmit(e)
     }
 })
