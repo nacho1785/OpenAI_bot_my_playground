@@ -1,6 +1,7 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+import axiosRetry from 'axios-retry';
 import { Configuration, OpenAIApi } from 'openai';
 
 dotenv.config();
@@ -14,6 +15,13 @@ const allowedOrigins = [
   'http://localhost:5173',
   'https://open-ai-bot-kappa.vercel.app',
 ];
+
+axiosRetry(openai.apiClient._axios, {
+  retries: 3, // Number of retries
+  retryDelay: (retryCount) => {
+    return retryCount * 1000; // Time between retries in milliseconds
+  },
+});
 
 
 const app = express();
