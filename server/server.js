@@ -68,6 +68,7 @@ app.post('/', async (req, res) => {
     if (!validModels.includes(model)) {
       return res.status(400).send({ error: 'Invalid model name.' });
     } */
+    const defaultModel = 'text-davinci-003';
     const response = await openai.createCompletion({
       model: defaultModel,
       prompt: `${prompt}`,
