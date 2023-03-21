@@ -4,6 +4,8 @@ import cors from 'cors';
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
 import { Configuration, OpenAIApi } from 'openai';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 
 dotenv.config();
 
@@ -43,6 +45,13 @@ app.use(
   }),
 );
 app.use(express.json());
+app.use(helmet());
+
+const limiter = rateLimit({
+  windowMs: 1 * 60 * 1000,
+  max: 10,
+});
+app.use(limiter);
 
 app.get('/', async (req, res) => {
   res.status(200).send({
