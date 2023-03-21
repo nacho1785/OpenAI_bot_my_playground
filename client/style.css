@@ -114,6 +114,7 @@ body {
 
 form {
   position: fixed, bottom;
+  bottom: 0;
   width: 100%;
   max-width: auto;
   margin: 0 auto;
@@ -171,4 +172,10 @@ select {
   place-items: center;
   color: #757575;
   background-color: #343541;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    bottom: 0; /* This will keep the form fixed at the bottom on mobile devices */
+  }
 }
