@@ -52,7 +52,7 @@ app.get('/', async (req, res) => {
 
 app.post('/', async (req, res) => {
   try {
-    const validModels = [
+  /*  const validModels = [
       'text-davinci-002',
       'text-curie-002',
       'text-babbage-002',
@@ -61,15 +61,15 @@ app.post('/', async (req, res) => {
       'text-curie-003',
       'text-babbage-001',
       'text-ada-001',
-    ];
+    ]; */
     const prompt = req.body.prompt;
-    const model = req.body.model;
+    /* const model = req.body.model;
 
     if (!validModels.includes(model)) {
       return res.status(400).send({ error: 'Invalid model name.' });
-    }
+    } */
     const response = await openai.createCompletion({
-      model: model,
+      model: defaultModel,
       prompt: `${prompt}`,
       temperature: 0.2,
       max_tokens: 3000,
