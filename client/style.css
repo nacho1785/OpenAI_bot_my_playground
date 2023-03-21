@@ -113,8 +113,10 @@ body {
 }
 
 form {
-  position: fixed, bottom;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   max-width: auto;
   margin: 0 auto;
