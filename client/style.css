@@ -113,15 +113,17 @@ body {
 }
 
 form {
+  position: fixed, bottom;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
   background: #40414F;
-
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   gap: 10px;
+  z-index: 10;
 }
 
 form.collapsed {
