@@ -180,6 +180,7 @@ select {
 @media screen and (max-width: 768px) {
   #chat_container {
     height: calc(100% - 60px);
+    overflow-y: scroll;
   }
   form {
     bottom: 0; /* This will keep the form fixed at the bottom on mobile devices */
