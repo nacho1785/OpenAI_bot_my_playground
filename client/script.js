@@ -5,8 +5,12 @@ const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
 function updateChatContainerPadding() {
-  const formHeight = form.offsetHeight;
-  chatContainer.style.paddingBottom = `${formHeight + 10}px`;
+  if (isSmallDevice()) {
+    const formHeight = form.offsetHeight;
+    chatContainer.style.height = `calc(100vh - ${formHeight}px)`;
+  } else {
+    chatContainer.style.height = 'auto';
+  }
 }
 
 function scrollToBottom() {
@@ -205,3 +209,9 @@ function updateFaceRotation(e) {
 
   faceImage.style.transform = `rotateX(${limitedRotationX}deg) rotateY(${limitedRotationY}deg)`;
 }
+
+function isSmallDevice() {
+  return window.matchMedia('(max-width: 767px)').matches;
+}
+
+window.addEventListener('resize', updateChatContainerPadding);
