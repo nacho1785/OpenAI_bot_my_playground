@@ -8,14 +8,10 @@ function updateChatContainerPadding() {
   const formHeight = form.offsetHeight;
   chatContainer.style.paddingBottom = `${formHeight + 10}px`;
 
-  const isMobile = window.innerWidth <= 768;
-  const isChatContainerFull = chatContainer.scrollHeight - chatContainer.scrollTop <= chatContainer.clientHeight;
-
-  if (isMobile && !isChatContainerFull) {
-    chatContainer.style.overflowY = 'hidden';
-  } else {
-    chatContainer.style.overflowY = 'auto';
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+  const chatContainerHeight = chatContainer.offsetHeight;
+  const viewportHeight = window.innerHeight;
+  if (chatContainerHeight >= viewportHeight) {
+    chatContainer.style.overflow = 'auto';
   }
 }
 
