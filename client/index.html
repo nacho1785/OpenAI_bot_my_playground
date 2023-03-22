@@ -11,18 +11,23 @@
 
     <div id="language-modal" class="modal">
       <div class="modal-content">
-        <h3>Select a language</h3>
-        <select id="language-select">
-          <option value="en">English</option>
-          <option value="es">Español</option>
-        </select>
-        <button id="language-confirm">Confirm</button>
+        <div class="language-selection">
+          <div id="language-buttons">
+            <div class="face-container">
+              <img id="face-image" src="./assets/favicon.png" alt="Your face" />
+            </div>
+            <div class="buttons-container">
+              <button id="english-button" class="language-button">ENGLISH</button>
+              <button id="spanish-button" class="language-button">ESPAÑOL</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div id="app">
-      <div id="chat_container"></div>
+      <div id="chat_container" class="hidden"></div>
 
-      <form>
+      <form class="hidden">
       <!--  <label for="model">Model:</label>
         <select name="model" id="model">
           <option value="text-davinci-003">text-davinci-003</option>

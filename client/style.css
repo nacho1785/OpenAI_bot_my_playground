@@ -185,21 +185,95 @@ select {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-  }
-    
+}
+
 .modal-content {
-  background-color: #fefefe;
+  background-color: #40414F;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 300px;
   text-align: center;
-  }
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-content h2 {
+  color: #dcdcdc;
+  margin-bottom: 20px;
+}
+
+#language-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.language-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  color: #dcdcdc;
+  background-color: #5436DA;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  margin: 10px;
+}
+
+.language-button:hover {
+  background-color: #10a37f;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+.face-container {
+  position: absolute;
+  width: 60px; /* Adjust the size as needed */
+  height: auto;   
+  pointer-events: none; /* Make sure the image doesn't interfere with button clicks */
+  margin-bottom: 15px;
+}
+
+#face-image {
+  width: 100%;
+  height: auto;
+  transform-origin: center center; /* Set the transformation origin */
+  transition: transform 0.1s; /* Add a smooth transition for the 3D effect */
+}
+
+.language-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+}
