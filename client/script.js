@@ -5,11 +5,17 @@ const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
 function updateChatContainerPadding() {
-  if (isSmallDevice()) {
-    const formHeight = form.offsetHeight;
-    chatContainer.style.height = `calc(100vh - ${formHeight}px)`;
+  const formHeight = form.offsetHeight;
+  chatContainer.style.paddingBottom = `${formHeight + 10}px`;
+
+  const isMobile = window.innerWidth <= 768;
+  const isChatContainerFull = chatContainer.scrollHeight - chatContainer.scrollTop <= chatContainer.clientHeight;
+
+  if (isMobile && !isChatContainerFull) {
+    chatContainer.style.overflowY = 'hidden';
   } else {
-    chatContainer.style.height = 'auto';
+    chatContainer.style.overflowY = 'auto';
+    chatContainer.scrollTop = chatContainer.scrollHeight;
   }
 }
 
