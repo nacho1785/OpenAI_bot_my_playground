@@ -4,6 +4,11 @@ import user from './assets/user.svg';
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
+const messageContainer = document.createElement('div');
+messageContainer.id = 'message_container';
+
+chatContainer.appendChild(messageContainer);
+
 function updateChatContainerPadding() {
   const formHeight = form.offsetHeight;
   chatContainer.style.paddingBottom = `${formHeight + 10}px`;
@@ -210,10 +215,6 @@ function updateFaceRotation(e) {
   const limitedRotationY = Math.max(Math.min(rotationY, 30), -30);
 
   faceImage.style.transform = `rotateX(${limitedRotationX}deg) rotateY(${limitedRotationY}deg)`;
-}
-
-function isSmallDevice() {
-  return window.matchMedia('(max-width: 767px)').matches;
 }
 
 window.addEventListener('resize', updateChatContainerPadding);
