@@ -1,4 +1,4 @@
-import { bot, user, form, chatContainer, messageContainer, updateChatContainerPadding, scrollToBottom, loader, typeText, generateUniqueId, chatStripe, displayInitialBotMessage, setAppBackgroundAndPlaceholder, updateFaceRotation } from './components';
+import { form, chatContainer, messageContainer, updateChatContainerPadding, scrollToBottom, loader, typeText, generateUniqueId, chatStripe, displayInitialBotMessage, setAppBackgroundAndPlaceholder, updateFaceRotation } from './components';
 
 // Append messageContainer to chatContainer
 chatContainer.appendChild(messageContainer);

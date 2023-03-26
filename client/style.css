@@ -15,6 +15,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: #343541;
+  padding-top: 50px;
 
   display: flex;
   flex-direction: column;
@@ -281,4 +282,33 @@ button {
   flex-direction: row;
   justify-content: center;
   gap: 20px;
+}
+
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #40414F;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 110;
+}
+
+.contact-item {
+  color: #dcdcdc;
+  font-size: 16px;
+}
+
+.contact-item a {
+  color: #8677F2;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #B5A7FF;
 }
