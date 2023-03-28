@@ -2,7 +2,7 @@ import { form, chatContainer } from './domElements';
 
 function updateChatContainerPadding() {
     const formHeight = form.offsetHeight;
-    chatContainer.style.paddingBottom = `${formHeight + 10}px`;
+    chatContainer.style.paddingBottom = `${formHeight + 60}px`;
   
     const chatContainerHeight = chatContainer.offsetHeight;
     const viewportHeight = window.innerHeight;

@@ -1,4 +1,5 @@
 import { bot, user } from './domElements';
+import { scrollToBottom } from './chatUI';
 
 function generateUniqueId() {
     const timestamp = Date.now();

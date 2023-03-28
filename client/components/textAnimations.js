@@ -1,3 +1,5 @@
+import { scrollToBottom } from './chatUI';	
+
 function loader(element) {
     element.textContent = '';
   
