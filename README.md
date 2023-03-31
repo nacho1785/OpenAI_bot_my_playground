@@ -1,5 +1,5 @@
 ﻿# OpenAI_bot
-Learning playground re-version of ChatGPT3 -- 
+Testing playground re-version of ChatGPT3.5 -- 
 contact: ignacio@chapperon.net
 Try it: http://open-ai-bot-kappa.vercel.app/
 
