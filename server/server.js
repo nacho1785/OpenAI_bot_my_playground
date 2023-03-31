@@ -18,7 +18,7 @@ axiosRetry(customAxios, {
 });
 
 const configuration = new Configuration({
-  organization: 'org-zs5TqBhYY2ilhDVtZFUNOP6u',
+  organization: 'org-NGUpAObYj4LEw5wCyw46ZnGY',
   apiKey: process.env.OPENAI_API_KEY,
   baseClient: customAxios,
 });
